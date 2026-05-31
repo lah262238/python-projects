@@ -23,3 +23,12 @@ if total_budget := 10000:
         print("Over budget! You have exceeded your budget by:", total - total_budget)
     else:
         print("You are within your budget. Remaining budget:", total_budget - total)
+
+# Save results to a file
+file = open("expenses.txt", "w")
+file.write("Total expenses: " + str(total) + "\n")
+file.write("Maximum expense: " + str(max_expenses) + "\n")
+for i in range(len(names)):
+    file.write(names[i] + ": " + str(Amounts[i]) + "\n")
+file.close()
+print("Results saved to expenses.txt")
