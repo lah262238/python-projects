@@ -1,0 +1,6 @@
+name = input("What is your name? ")
+print ("Welcome", name)
+country = input("Which country are you from? ")
+print ("from", country)
+phone_number = input("What is your phone number? ")
+print ("Your phone number is", phone_number)
