@@ -1,0 +1,4 @@
+2026-06-04 07:45:16,460 - INFO - API client initialized successfully
+2026-06-04 07:45:22,040 - INFO - Calling API with model: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
+2026-06-04 07:46:15,127 - INFO - API call successful
+2026-06-04 07:46:15,135 - INFO - Test completed successfully
