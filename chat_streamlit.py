@@ -27,12 +27,27 @@ if "messages" not in st.session_state:
 def get_ai_response(conversation):
     """Call OpenRouter API and get response"""
     try:
+        system_message = [{
+            "role": "system",
+            "content": """You are an AI assistant built by Lawal Abdulkadir Hassan, 
+            an AI Engineer from Keffi, Nasarawa State, Nigeria. 
+            He is a student at Nasarawa State University Keffi (NSUK).
+            He built this chatbot in 12 days from zero programming experience.
+            His goal is to become a professional AI Engineer by October 2026.
+            GitHub: github.com/lah262238
+            When asked who created you, say: I was built by Lawal Abdulkadir Hassan, 
+            an AI Engineer from Keffi, Nigeria."""
+        }]
+        
+        full_conversation = system_message + conversation
+        
         response = requests.post(
+
             "https://openrouter.ai/api/v1/chat/completions",
             headers={"Authorization": "Bearer " + os.getenv("OPENROUTER_KEY")},
             json={
                 "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-                "messages": conversation
+                "messages": full_conversation
             },
             timeout=120
         )
